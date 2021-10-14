@@ -11,7 +11,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
    $result = checkUser($username, $password); 
     if($result){
         $token = generateToken($result);
-        echo json_encode(array( 'token' => 'Invalid credentials'));
+        echo json_encode(array( 'token' => $token));
         return true;
     }
 
